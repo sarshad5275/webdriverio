@@ -1,0 +1,62 @@
+[
+    {
+        "id": "qafhms",
+        "clientId": "KVcmlo",
+        "clientName": "Nexient",
+        "name": "Memorial Day",
+        "day": "2022-05-30",
+        "holidayType": "FULL_DAY",
+        "corporate": true,
+        "workable": false
+    },
+    {
+        "id": "dxzhgm",
+        "clientId": "KVcmlo",
+        "clientName": "Nexient",
+        "name": "4th of July",
+        "day": "2022-07-04",
+        "holidayType": "FULL_DAY",
+        "corporate": true,
+        "workable": false
+    },
+    {
+        "id": "allqjq",
+        "clientId": "KVcmlo",
+        "clientName": "Nexient",
+        "name": "Labor Day",
+        "day": "2022-09-05",
+        "holidayType": "FULL_DAY",
+        "corporate": true,
+        "workable": false
+    },
+    {
+        "id": "alunpa",
+        "clientId": "KVcmlo",
+        "clientName": "Nexient",
+        "name": "Thanksgiving Day",
+        "day": "2022-11-24",
+        "holidayType": "FULL_DAY",
+        "corporate": true,
+        "workable": false
+    },
+    {
+        "id": "efocav",
+        "clientId": "KVcmlo",
+        "clientName": "Nexient",
+        "name": "Christmas Day (observed)",
+        "day": "2022-12-26",
+        "holidayType": "FULL_DAY",
+        "corporate": true,
+        "workable": false
+    },
+    {
+        "id": "zmcius",
+        "clientId": "KVcmlo",
+        "clientName": "Nexient",
+        "name":"New Year's Day (observed)",
+        "day": "2023-01-02",
+        "holidayType": "FULL_DAY",
+        "corporate": true,
+        "workable": false
+    }
+]

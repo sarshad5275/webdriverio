@@ -1,0 +1,20 @@
+{
+    "configurations": [
+      {
+        "name": "Debug Mocha Test",
+        "type": "node",
+        "request": "launch",
+        "args": ["wdio.conf.js", "--spec", "./test/specs/ebay.js"],
+        "cwd": "${workspaceFolder}",
+        "autoAttachChildProcesses": true,
+        "program": "${workspaceRoot}/node_modules/@wdio/cli/bin/wdio.js",
+        "console": "integratedTerminal",
+        "skipFiles": [
+          "${workspaceFolder}/node_modules/**/*.js",
+          "${workspaceFolder}/lib/**/*.js",
+          "<node_internals>/**/*.js"
+        ]
+      }
+    ]
+  }
+  
