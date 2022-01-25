@@ -25,10 +25,12 @@ describe('My Nexport Login application', () => {
         await searchBtn.click();
         const searchJobTitle = $("input[type='text']");
         await searchJobTitle.setValue("Admin");
-
+        browser.pause(5000);
         const allEmployees = $$(".employee-search-padding");
         const adminsActual = await elementActions.getTextFromList(allEmployees);
         var expectedListOfEmployees = testdata.AdminData;
+        console.log("Actual list on UI = " + adminsActual);
+        console.log("Expected list = " + expectedListOfEmployees);
 
         Asserts.isArrayEqual(adminsActual, expectedListOfEmployees);
     });
