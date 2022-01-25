@@ -22,6 +22,15 @@ After opening the project in VSCode
 Open a terminal -> new terminal 
 Run: npm install  -- This will install all dependencies shown in package.json file
 
+Installations required to generate allure reports:
+1. Install latest JDK version from oracle website (https://www.oracle.com/java/technologies/downloads/#jdk17-windows)
+2. Install latest version of allure (zip file  from https://github.com/allure-framework/allure2/releases) and extract in the local folder.
+3. Added system environment variables as below
+    a. allure (please provide allure installation path in the Value) 
+    b. JAVA_HOME (set value to local JDK path) 
+    c. click on PATH variable, Add New Variable and provide JDK bin path
+4. If we run into any ps1 issues, we should run the command "Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted" in the powershell
+
 Folders Used:
 allure-report : Generated Alllure Reports are placed in this folder
 allure-results : results after running the scripts will be uploaded to allure-results
