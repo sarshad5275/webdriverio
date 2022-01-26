@@ -20,7 +20,7 @@ Install Visual Studio Code
 Clone the repo to the VSCode
 After opening the project in VSCode 
 Open a terminal -> new terminal 
-Run: npm install  -- This will install all dependencies shown in package.json file
+Run: 'npm install'  -- This will install all dependencies shown in package.json file
 
 Installations required to generate allure reports:
 1. Install latest JDK version from oracle website (https://www.oracle.com/java/technologies/downloads/#jdk17-windows)
@@ -56,8 +56,9 @@ replace with 'Password/txt' you want to encrypt in the below code:
 ManagePasswords.encrypt("enter your Password to get the encrypted password");
 Save the file
 
-Run in terminal: npm run encrypt 
+Run in terminal: 'npm run encrypt'
 get the encryptedPassword written to the console.log 
-and add encryptedPassword  to the Environment variables
+and add encryptedPassword  to the .env file
+NOTE:'.env' file is not checked in for security reason. Please create a '.env' file at the root directory and add all Environment variables to that file. 
 
 

@@ -1,20 +1,16 @@
 import NexportLoginPage from '../pageobjects/nexportLogin.page';
 import NexportHomePage from '../pageobjects/nexportHome.page';
-import credentials from '../testdata/creds.json';
 import Asserts from '../common/Asserts';
 import elementActions from '../common/elementActions';
 import testdata from '../testdata/td.json';
 
-describe('My Nexport Login application', () => {
-
-    it('should login with valid credentials', async () => {
+describe('My Nexport Login application', () => {   
+    it('should login with valid credentials', async () => {       
         await NexportLoginPage.open();
         await NexportLoginPage.loginClick();
-        //get the data from json                    
-        console.log("process.env.NexPassword = " + process.env.NexPassword);
-        await NexportLoginPage.login(credentials.nexport.username, process.env.NexPassword);
-        const nexHome = await NexportHomePage.homeLink();
-        // const homeTxt = await nexHome.getText().then(x => x);
+        //get the data from json  
+        await NexportLoginPage.login(process.env.NEXUSERNAME, process.env.NEXPASSWORD);
+        const nexHome = await NexportHomePage.homeLink();       
         Asserts.equal(await nexHome.getText(), 'HOME');
     });
 
@@ -25,10 +21,12 @@ describe('My Nexport Login application', () => {
         await searchBtn.click();
         const searchJobTitle = $("input[type='text']");
         await searchJobTitle.setValue("Admin");
-
+        browser.pause(5000);
         const allEmployees = $$(".employee-search-padding");
         const adminsActual = await elementActions.getTextFromList(allEmployees);
         var expectedListOfEmployees = testdata.AdminData;
+        console.log("Actual list on UI = " + adminsActual);
+        console.log("Expected list = " + expectedListOfEmployees);
 
         Asserts.isArrayEqual(adminsActual, expectedListOfEmployees);
     });
