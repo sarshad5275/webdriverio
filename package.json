@@ -34,5 +34,8 @@
     "wdio-chromedriver-service": "^7.2.6",
     "wdio-video-reporter": "^3.2.0",
     "wdio-wait-for": "^2.2.1"
+  },
+  "dependencies": {
+    "dotenv": "^14.3.2"
   }
 }

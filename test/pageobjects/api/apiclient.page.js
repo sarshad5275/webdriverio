@@ -26,8 +26,8 @@ class APIClient {
         const loginResponse = await request
             .post(configdata.nxLoginEndpoint)
             .send({
-                username: credentials.nexport.username,
-                password: managepassword.decrypt(process.env.NexPassword)
+                username: process.env.NEXUSERNAME,
+                password: managepassword.decrypt(process.env.NEXPASSWORD)
             })
             .set('version', configdata.nxVersion_2);
         return loginResponse;

@@ -1,5 +1,6 @@
 //import { default as AllureReporter } from '@wdio/allure-reporter';
 import video from 'wdio-video-reporter';
+import env from 'dotenv/config';
 
 export const config = {
     //
@@ -218,7 +219,7 @@ export const config = {
         //     latency: 2000,
         //     throughput: 650 * 1024
 
-        // });
+        // });       
         const chai = require('chai');
         global.cExpect = chai.expect;
         global.assert = chai.assert;

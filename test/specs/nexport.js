@@ -1,20 +1,16 @@
 import NexportLoginPage from '../pageobjects/nexportLogin.page';
 import NexportHomePage from '../pageobjects/nexportHome.page';
-import credentials from '../testdata/creds.json';
 import Asserts from '../common/Asserts';
 import elementActions from '../common/elementActions';
 import testdata from '../testdata/td.json';
 
-describe('My Nexport Login application', () => {
-
-    it('should login with valid credentials', async () => {
+describe('My Nexport Login application', () => {   
+    it('should login with valid credentials', async () => {       
         await NexportLoginPage.open();
         await NexportLoginPage.loginClick();
-        //get the data from json                    
-        console.log("process.env.NexPassword = " + process.env.NexPassword);
-        await NexportLoginPage.login(credentials.nexport.username, process.env.NexPassword);
-        const nexHome = await NexportHomePage.homeLink();
-        // const homeTxt = await nexHome.getText().then(x => x);
+        //get the data from json  
+        await NexportLoginPage.login(process.env.NEXUSERNAME, process.env.NEXPASSWORD);
+        const nexHome = await NexportHomePage.homeLink();       
         Asserts.equal(await nexHome.getText(), 'HOME');
     });
 
