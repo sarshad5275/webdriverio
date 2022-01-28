@@ -16,9 +16,8 @@ describe('Nexport API Test', () => {
         accessToken = await apiPage.nxToken();
     });
 
-    it('API test1: get Employee Profile data', async () => {          
-        const employeeId = credentials.nexport.username ;   
-        const profileResponse = await apiPage.nexProfileAPI(employeeId,accessToken);
+    it('API test1: get Employee Profile data', async () => { 
+        const profileResponse = await apiPage.nexProfileAPI(process.env.NEXUSERNAME,accessToken);
         const data = new ProfileData(profileResponse.body);
         Reporter.addStep("Profile Data = " + JSON.stringify(data));  
         Asserts.equal(profileResponse.status,200);   
@@ -30,6 +29,7 @@ describe('Nexport API Test', () => {
         Asserts.equal(holidaysRespose.status,200);
 
         var holidaylist =  new HolidayList(holidaysRespose.body); 
+        
         var actualList = holidaylist.getAllHolidays;       
         Reporter.addStep("All Holidays List = " + JSON.stringify(actualList));       
         Asserts.deepEqual(actualList, testData.HolidaysData);

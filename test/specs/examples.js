@@ -32,16 +32,16 @@ describe('My Login application', () => {
         await suggessionField.setValue("ind");
         await $(".ui-menu-item div").waitForDisplayed();
 
-        ElementActions.clickElementNameFromList(".ui-menu-item div", "India");
+        ElementActions.clickElementNameFromListBySelector(".ui-menu-item div", "India");
 
         await browser.pause(1000);
         console.log('suggessionField test= ' + await $("#autocomplete").getValue());
 
-        await Asserts.equal(await $("#autocomplete").getValue(),"India" );
+        Asserts.equal(await $("#autocomplete").getValue(),"India" );
       
     });
 
-    it.only('Obj compare test', async () => {
+    it('Obj compare test', async () => {
 
         const obj1 = { name: 'John', age: 33, info: { married: true, hobbies: ['sport', 'art'] } };
         const obj2 = { age: 33, name: 'John', info: { hobbies: ['sport', 'art'], married: true } };

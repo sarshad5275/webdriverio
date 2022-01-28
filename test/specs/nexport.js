@@ -10,6 +10,7 @@ describe('My Nexport Login application', () => {
         await NexportLoginPage.loginClick();
         //get the data from json  
         await NexportLoginPage.login(process.env.NEXUSERNAME, process.env.NEXPASSWORD);
+       // await NexportLoginPage.loginWithBcrypt(process.env.NEXUSERNAME, process.env.NEXPASSWORD);
         const nexHome = await NexportHomePage.homeLink();       
         Asserts.equal(await nexHome.getText(), 'HOME');
     }); 

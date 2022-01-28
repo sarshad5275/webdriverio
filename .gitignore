@@ -2,4 +2,3 @@ node_modules
 _results_
 allure-report/*
 allure-results/*
-.env
