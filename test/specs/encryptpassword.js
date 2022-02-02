@@ -10,8 +10,13 @@ Reopen the VSCode project
 
 describe('Encrypt Password', () => {
     it('Encrypt Password', async () => {
-        ManagePasswords.encrypt("");
+        ManagePasswords.encrypt("hellotest");
        // const decryr = managepassword.decrypt("enter the env variable here to decrypt it exg: process.env.NexPassword");
        // console.log("Decrypcted = " + decryr);
      });
+
+     it('Encrypt Password using bcrypt', async () => {
+      ManagePasswords.encryptUsingBcrypt("Bamboogarden&%4398huts");
+    
+   });
 });

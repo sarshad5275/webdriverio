@@ -36,6 +36,7 @@
     "wdio-wait-for": "^2.2.1"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "dotenv": "^14.3.2"
   }
 }

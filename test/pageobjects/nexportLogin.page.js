@@ -2,6 +2,7 @@ import Page from './page';
 import configdata from '../resources/configdata';
 import elementActions from '../common/elementActions';
 import managepassword from '../utility/managepassword';
+import Asserts from '../common/Asserts';
 
 
 /**
@@ -25,8 +26,22 @@ class NexportLoginPage extends Page {
 
     async login(username, password) {      
         await elementActions.setValue(await this.inputUsername, 'USERNAME', username); 
-        const decryptedPassword = managepassword.decrypt(password);
+        const decryptedPassword = managepassword.decrypt(password);     
         await elementActions.setValue(await this.inputPassword, 'PASSWORD', decryptedPassword); 
+        await elementActions.selectCheckbox(await this.rememberMe, 'RememberMe Checkbox'); 
+        await elementActions.click(await this.btnLoginSubmit, "Login Submit");          
+    }
+    //loginWithBcrypt - This would compare the entered password with the encrypted password and verifies. it is highly not possible to decrypt this password 
+    async loginWithBcrypt(username, password) {      
+        await elementActions.setValue(await this.inputUsername, 'USERNAME', username); 
+        const isPasswordMatch = managepassword.compare(process.env.HASHED_NEXPASSWORD, password);   
+        if (isPasswordMatch) {
+            console.log("Passwords matched.");
+            await elementActions.setValue(await this.inputPassword, 'PASSWORD', process.env.TESTPASSWORD); 
+        } else {
+            Asserts.fail("Incorrect password entered.");
+        }  
+        
         await elementActions.selectCheckbox(await this.rememberMe, 'RememberMe Checkbox'); 
         await elementActions.click(await this.btnLoginSubmit, "Login Submit");          
     }
