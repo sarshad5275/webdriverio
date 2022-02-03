@@ -1,5 +1,5 @@
 import Page from './page';
-import configdata from '../resources/configdata';
+import apiurls from '../resources/baseurls';
 import elementActions from '../common/elementActions';
 
 
@@ -10,7 +10,7 @@ class NexportSearchPage extends Page {
     /**
      * define selectors using getter methods
      */
-    get baseurl() { return configdata.nexportURL };
+    get baseurl() { return apiurls.nexportURL };
     get search() { return $("a[aria-label='View Directory'] i[class='material-icons md-24 md-light ng-scope']") };
     get jobTitle() {return $("input[type='text']")};
     get skill() {return $("input[aria-label$='Skill']")};

@@ -1,5 +1,5 @@
 import Page from './page';
-import configdata from '../resources/configdata';
+import apiurls from '../resources/baseurls';
 import elementActions from '../common/elementActions';
 import managepassword from '../utility/managepassword';
 import Asserts from '../common/Asserts';
@@ -12,10 +12,12 @@ class NexportLoginPage extends Page {
     /**
      * define selectors using getter methods
      */
-    get baseurl() { return configdata.nexportURL };
-    get inputUsername() { return $('#input_0') };
+    get baseurl() { return apiurls.nexportURL };
+    //'#input_0': ID
+    get inputUsername() { return $('[name="username"]') };
     get btnloginNextport() { return $("//a[text() = 'login']") };
-    get inputPassword() { return $('#input_1') };
+    //#input_1 : ID
+    get inputPassword() { return $('[name="password"]') };
     get btnLoginSubmit() { return $("//button[@type = 'submit']") };
     get rememberMe() { return $('[type = "checkbox"]') };
 

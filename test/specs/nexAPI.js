@@ -1,10 +1,10 @@
 //import 'chai/register-should';
 import supertest from 'supertest';
-import configdata from '../resources/configdata';
+//import configdata from '../resources/configdata';
 import HolidayList from '../dataobjects/holidaylist';
 import apiPage from '../pageobjects/api/apiclient.page';
 import Reporter from '../common/Reporter';
-import credentials from '../testdata/creds.json';
+//import credentials from '../testdata/creds.json';
 import Asserts from '../common/Asserts';
 import ProfileData from '../dataobjects/profileobj';
 import testData from '../testdata/td.json';

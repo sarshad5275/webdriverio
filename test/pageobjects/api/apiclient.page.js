@@ -1,9 +1,11 @@
 import supertest from 'supertest';
 import Asserts from '../../common/Asserts';
 import Reporter from '../../common/Reporter';
-import configdata from '../../resources/configdata';
-import credentials from '../../testdata/creds.json';
+import apiurls from '../../resources/baseurls';
+import apiendpoints from '../../resources/apiendpoints';
+//import credentials from '../../testdata/creds.json';
 import managepassword from '../../utility/managepassword';
+import loginproperties from '../../resources/loginproperties'
 
 class APIClient {
     async nxToken() {
@@ -21,40 +23,42 @@ class APIClient {
 
     async nexLoginAPI() {
         console.log("NEXPORT Login API is called..");
-        console.log("configdata.nxLoginEndpoint = " + configdata.nxLoginEndpoint);
-        const request = supertest(configdata.nxAPIBaseUrl);
+        console.log("apiendpoints.nxLoginEndpoint = " + apiendpoints.nxLoginEndpoint);
+        const request = supertest(apiurls.nxAPIBaseUrl);
         const loginResponse = await request
-            .post(configdata.nxLoginEndpoint)
+            .post(apiendpoints.nxLoginEndpoint)
             .send({
-                username: process.env.NEXUSERNAME,
-                password: managepassword.decrypt(process.env.NEXPASSWORD)
+                //username: process.env.NEXUSERNAME,
+                //password: managepassword.decrypt(process.env.NEXPASSWORD)
+                username: loginproperties.NEXUSERNAME,
+                password: managepassword.decrypt(loginproperties.NEXPASSWORD)
             })
-            .set('version', configdata.nxVersion_2);
+            .set('version', apiurls.nxVersion_2);
         return loginResponse;
     }
 
     async nexProfileAPI(employeeId, accessToken) {
         Reporter.addStep("NEXPORT Profile API is called..");
-        Reporter.addStep("configdata.nxProfileEndpoint = " + configdata.nxProfileEndpoint + '/' + employeeId);
-        const request = supertest(configdata.nxAPIBaseUrl);
+        Reporter.addStep("apiendpoints.nxProfileEndpoint = " + apiendpoints.nxProfileEndpoint + '/' + employeeId);
+        const request = supertest(apiurls.nxAPIBaseUrl);
         const profileResponse = await request
-            .get(configdata.nxProfileEndpoint + '/' + employeeId)
+            .get(apiendpoints.nxProfileEndpoint + '/' + employeeId)
             .set('X-Authorization', accessToken)
-            .set('tenantId', configdata.nxTenentId)
-            .set('version', configdata.nxVersion_2);
+            .set('tenantId', apiurls.nxTenentId)
+            .set('version', apiurls.nxVersion_2);
         return profileResponse;
     }
 
 
     async holidayAPI(accessToken) {
         Reporter.addStep("NEXPORT Holiday API is called..");
-        Reporter.addStep("configdata.nxHolidaysEndpoint = " + configdata.nxHolidaysEndpoint);      
-        const request = supertest(configdata.nxAPIBaseUrl);
+        Reporter.addStep("apiendpoints.nxHolidaysEndpoint = " + apiendpoints.nxHolidaysEndpoint);      
+        const request = supertest(apiurls.nxAPIBaseUrl);
         const response = await request
-            .get(configdata.nxHolidaysEndpoint)
+            .get(apiendpoints.nxHolidaysEndpoint)
             .set('X-Authorization', accessToken)
-            .set('tenantId', configdata.nxTenentId)
-            .set('version', configdata.nxVersion_1);
+            .set('tenantId', apiurls.nxTenentId)
+            .set('version', apiurls.nxVersion_1);
 
         Asserts.equal(response.status,200);        
         return response;

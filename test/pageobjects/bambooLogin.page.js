@@ -1,5 +1,5 @@
 import Page from './page';
-import configdata from '../resources/configdata';
+import apiurls from '../resources/baseurls';
 import elementActions from '../common/elementActions';
 import managepassword from '../utility/managepassword';
 
@@ -10,7 +10,7 @@ class BambooLoginPage extends Page {
     /**
      * define selectors using getter methods
      */
-    get baseurl() { return configdata.bambooURL };
+    get baseurl() { return apiurls.bambooURL };
     get email() { return $('#email') };    
     get inputPassword() { return $('#input_1') };
     get btnLoginSubmit() { return $("//button[@type = 'submit']") };

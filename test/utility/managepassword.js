@@ -1,6 +1,7 @@
 import Cryptr from "cryptr";
 
-const bcrypt = require('bcryptjs');
+//commented this line as we are not using in exisitng framework
+//const bcrypt = require('bcryptjs');
 
 class ManagePasswords {
     encrypt = (password) => {
@@ -15,14 +16,15 @@ class ManagePasswords {
         return decryptstring;
     }
 
-    encryptUsingBcrypt = async (text) => {
-        // generate salt to hash password
-        const salt = await bcrypt.genSalt(10);
-        // now we set user password to hashed password
-        const secret = await bcrypt.hash(text, salt);
-        console.log(" Hashed Password = " + secret);
-        console.log(" SALT = " + salt);
-    }
+//commented this line as we are not using in exisitng framework
+//     encryptUsingBcrypt = async (text) => {
+//          generate salt to hash password
+//        const salt = await bcrypt.genSalt(10);
+//         now we set user password to hashed password
+//         const secret = await bcrypt.hash(text, salt);
+//        console.log(" Hashed Password = " + secret);
+//        console.log(" SALT = " + salt);
+//     }
 
     compare = async (password, hash) => {
         bcrypt.compare(password, hash, (err, res) => {

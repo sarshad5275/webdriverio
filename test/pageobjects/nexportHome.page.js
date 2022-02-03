@@ -1,6 +1,6 @@
 
 import Page from './page';
-import configdata from '../resources/configdata';
+import apiurls from '../resources/baseurls';
 import AllureReporter from '@wdio/allure-reporter';
 
 /**
@@ -11,7 +11,7 @@ class NexportHomePage extends Page {
      * define selectors using getter methods
      */
     get baseurl() {
-        return configdata.nexportURL;
+        return apiurls.nexportURL;
     }
 
     get title() {

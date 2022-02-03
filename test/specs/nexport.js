@@ -3,13 +3,15 @@ import NexportSearchPage from '../pageobjects/search.page';
 import NexportHomePage from '../pageobjects/nexportHome.page';
 import Asserts from '../common/Asserts';
 import testdata from '../testdata/td.json';
+import logindata from '../resources/loginproperties'
 
 describe('My Nexport Login application', () => {   
     it('Login to Nexport with valid credentials', async () => {       
         await NexportLoginPage.open();
         await NexportLoginPage.loginClick();
-        //get the data from json  
-        await NexportLoginPage.login(process.env.NEXUSERNAME, process.env.NEXPASSWORD);
+        //getting the username and password from .env file
+        //process.env.NEXUSERNAME and process.env.NEXPASSWORD
+        await NexportLoginPage.login(logindata.NEXUSERNAME, logindata.NEXPASSWORD);
        // await NexportLoginPage.loginWithBcrypt(process.env.NEXUSERNAME, process.env.NEXPASSWORD);
         const nexHome = await NexportHomePage.homeLink();       
         Asserts.equal(await nexHome.getText(), 'HOME');

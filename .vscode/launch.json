@@ -4,7 +4,7 @@
         "name": "Debug Mocha Test",
         "type": "node",
         "request": "launch",
-        "args": ["wdio.conf.js", "--spec", "./test/specs/ebay.js"],
+        "args": ["wdio.conf.js", "--spec", "./test/specs/nexport.js"],
         "cwd": "${workspaceFolder}",
         "autoAttachChildProcesses": true,
         "program": "${workspaceRoot}/node_modules/@wdio/cli/bin/wdio.js",
