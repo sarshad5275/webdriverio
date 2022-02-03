@@ -4,13 +4,14 @@
   "description": "Automation Framework for WebdriverIO using MOCHA-JS",
   "main": "index.js",
   "scripts": {
-    "bamboo": "wdio run wdio.conf.js --spec ./test/specs/bamboo.js",
-    "nexport": "wdio run wdio.conf.js --spec ./test/specs/nexport.js",
-    "nexapi": "wdio run wdio.conf.js --spec ./test/specs/nexAPI.js",
-    "examples": "wdio run wdio.conf.js --spec ./test/specs/examples.js",
-    "wdio": "wdio run wdio.conf.js",
+    "bamboo": "wdio run wdio.mochaconf.js --spec ./test/specs/bamboo.js",
+    "nexport": "wdio run wdio.mochaconf.js --spec ./test/specs/nexport.js",
+    "nexapi": "wdio run wdio.mochaconf.js --spec ./test/specs/nexAPI.js",
+    "examples": "wdio run wdio.mochaconf.js --spec ./test/specs/examples.js",
+    "wdio": "wdio run wdio.mochaconf.js",
     "allure": "allure generate --clean allure-results && allure open",
-    "encrypt": "wdio run wdio.conf.js --spec ./test/specs/encryptpassword.js"
+    "encrypt": "wdio run wdio.mochaconf.js --spec ./test/specs/encryptpassword.js",
+    "cucumber":"wdio run ./wdio.cucumberconf.js "
   },
   "keywords": [],
   "author": "Nexient",
