@@ -10,16 +10,13 @@
     "examples": "wdio run wdio.mochaconf.js --spec ./test/specs/examples.js",
     "wdio_mocha": "wdio run wdio.mochaconf.js",
     "encrypt": "wdio run wdio.mochaconf.js --spec ./test/specs/encryptpassword.js",
-
     "wdio_cucumber": "wdio run wdio.cucumberconf.js",
     "cucumber": "wdio run ./wdio.cucumberconf.js ",
     "tagtest": "wdio run ./wdio.cucumberconf.js --cucumberOpts.tagExpression",
     "firsttest": "wdio run ./wdio.cucumberconf.js --cucumberOpts.tagExpression='@First'",
-
     "clean": "rimraf allure-results && rimraf allure-report && rimraf test-screenshots && rimraf wdio-logs",
     "allure": "allure generate --clean allure-results && allure open",
     "open": "allure open",
-
     "jenkins":"java -jar jenkins.war"
   },
   "keywords": [],
@@ -51,6 +48,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "dotenv": "^14.3.2",
+    "mysql": "^2.18.1",
     "prettier": "^2.5.1"
   }
 }
