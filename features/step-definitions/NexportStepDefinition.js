@@ -12,20 +12,20 @@ import testdata from '../../test/testdata/td.json';
 import logindata from '../../test/resources/loginproperties'
 import allureReporter from '@wdio/allure-reporter';
 
-Given(/^User is on the login page$/, async () => {
+Given(/^User is on the Nexport login page$/, async () => {
     const nexHome = await NexportHomePage.homeLink();
     if(!(await nexHome.isDisplayed())){
     await NexportLoginPage.open();
     await NexportLoginPage.loginClick();
 }
 });
-When(/^User logins with given credentials$/, async () => {
+When(/^User logins with given Nexport credentials$/, async () => {
     const nexHome = await NexportHomePage.homeLink();
     if(!(await nexHome.isDisplayed())){
     await NexportLoginPage.login(logindata.NEXUSERNAME, logindata.NEXPASSWORD);
     }
 });
-Then(/^User successfully logged into Application$/, async () => {
+Then(/^User successfully logged into Nexport Application$/, async () => {
     const nexHome = await NexportHomePage.homeLink();       
     Asserts.equal(await nexHome.getText(), 'HOME');
 });

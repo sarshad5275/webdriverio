@@ -14,6 +14,7 @@
     "cucumber": "wdio run ./wdio.cucumberconf.js ",
     "tagtest": "wdio run ./wdio.cucumberconf.js --cucumberOpts.tagExpression",
     "firsttest": "wdio run ./wdio.cucumberconf.js --cucumberOpts.tagExpression='@First'",
+    "bambootest": "wdio run ./wdio.cucumberconf.js --cucumberOpts.tagExpression='@BambooFirst'",
     "clean": "rimraf allure-results && rimraf allure-report && rimraf test-screenshots && rimraf wdio-logs",
     "allure": "allure generate --clean allure-results && allure open",
     "open": "allure open",

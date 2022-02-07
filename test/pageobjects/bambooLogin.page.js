@@ -11,8 +11,8 @@ class BambooLoginPage extends Page {
      * define selectors using getter methods
      */
     get baseurl() { return apiurls.bambooURL };
-    get email() { return $('#email') };    
-    get inputPassword() { return $('#input_1') };
+    get email() { return $('#lemail') };    
+    get inputPassword() { return $('#password') };
     get btnLoginSubmit() { return $("//button[@type = 'submit']") };
     get rememberMe() { return $('[type = "checkbox"]') };
 
@@ -20,7 +20,8 @@ class BambooLoginPage extends Page {
         await elementActions.setValue(await this.email, 'EMAIL', email); 
         const decryptedPassword = managepassword.decrypt(password);
         await elementActions.setValue(await this.inputPassword, 'PASSWORD', decryptedPassword);        
-        await elementActions.click(await this.btnLoginSubmit, "Login Submit");          
+        await elementActions.click(await this.btnLoginSubmit, "Login Submit");
+        await browser.maximizeWindow();      
     }
 
     /**

@@ -18,7 +18,7 @@ class BambooHomePage extends Page {
         return $('title');
     }
 
-    get home() { return $("//a[@aria-label= 'Home']") }
+    get home() { return $("//a[@data-text= 'Home']") }
 
     get companyLinks() {
         return $('#LINKS');

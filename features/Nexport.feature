@@ -1,13 +1,13 @@
 Feature: NexPort Website Automation
 
 Background: Login to Application
-    Given User is on the login page
-    When User logins with given credentials
-    Then User successfully logged into Application
+    Given User is on the Nexport login page
+    When User logins with given Nexport credentials
+    Then User successfully logged into Nexport Application
 
 @First
 Scenario: Search with Admin in JobTitle Field
-    Given User successfully logged into Application
+    Given User successfully logged into Nexport Application
     When User searches with "<TitleName>" in JobTitle
     Then compare with the given "<ExpectedValue>" value
 
@@ -17,10 +17,10 @@ Examples:
 
 @Second
 Scenario: Search with Admin in JobTitle Field
-    Given User successfully logged into Application
+    Given User successfully logged into Nexport Application
     When User searches with "<TitleName>" in JobTitle
     Then compare with the given "<ExpectedValue>" value
 
-    Examples:
+Examples:
     | TitleName | ExpectedValue |
     | Skill | AutomationData |
