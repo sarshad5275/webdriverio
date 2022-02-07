@@ -132,14 +132,31 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec'],
-
-
-    //
+    reporters: [
+    ['allure', {
+        outputDir: 'allure-results',
+        disableWebdriverStepsReporting: true,
+        disableWebdriverScreenshotsReporting: true
+    }],
+    ['spec', {
+        symbols: {
+            passed: '[PASS]',
+            failed: '[FAIL]',
+        },
+        addConsoleLogs: true,
+        realtimeReporting: true
+    },
+    ]
+        //[ 'cucumberjs-json', {
+        //        jsonFolder: '.tmp/new/',
+         //       language: 'en',
+         //   },
+        //],
+],
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
-        require: ['./features/step-definitions/steps.js'],
+        require: ['./features/step-definitions/*.js'],
         // <boolean> show full backtrace for errors
         backtrace: false,
         // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
@@ -269,8 +286,9 @@ exports.config = {
      * @param {number}                 result.duration  duration of scenario in milliseconds
      * @param {Object}                 context          Cucumber World object
      */
-    // afterScenario: function (world, result, context) {
-    // },
+     afterScenario: function (world, result, context) {
+     //browser.closeWindow();
+    },
     /**
      *
      * Runs after a Cucumber Feature.

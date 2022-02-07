@@ -8,10 +8,19 @@
     "nexport": "wdio run wdio.mochaconf.js --spec ./test/specs/nexport.js",
     "nexapi": "wdio run wdio.mochaconf.js --spec ./test/specs/nexAPI.js",
     "examples": "wdio run wdio.mochaconf.js --spec ./test/specs/examples.js",
-    "wdio": "wdio run wdio.mochaconf.js",
-    "allure": "allure generate --clean allure-results && allure open",
+    "wdio_mocha": "wdio run wdio.mochaconf.js",
     "encrypt": "wdio run wdio.mochaconf.js --spec ./test/specs/encryptpassword.js",
-    "cucumber":"wdio run ./wdio.cucumberconf.js "
+
+    "wdio_cucumber": "wdio run wdio.cucumberconf.js",
+    "cucumber": "wdio run ./wdio.cucumberconf.js ",
+    "tagtest": "wdio run ./wdio.cucumberconf.js --cucumberOpts.tagExpression",
+    "firsttest": "wdio run ./wdio.cucumberconf.js --cucumberOpts.tagExpression='@First'",
+
+    "clean": "rimraf allure-results && rimraf allure-report && rimraf test-screenshots && rimraf wdio-logs",
+    "allure": "allure generate --clean allure-results && allure open",
+    "open": "allure open",
+
+    "jenkins":"java -jar jenkins.war"
   },
   "keywords": [],
   "author": "Nexient",
@@ -31,8 +40,10 @@
     "chromedriver": "^97.0.4",
     "cryptr": "^6.0.2",
     "moment": "^2.29.1",
+    "rimraf": "^3.0.2",
     "superagent": "^7.0.2",
     "supertest": "^6.1.6",
+    "wdio-allure-reporter": "^0.8.3",
     "wdio-chromedriver-service": "^7.2.6",
     "wdio-video-reporter": "^3.2.0",
     "wdio-wait-for": "^2.2.1"

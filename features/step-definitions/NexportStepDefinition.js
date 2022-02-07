@@ -1,7 +1,8 @@
 import { Given, When, Then } from '@wdio/cucumber-framework';
-
+//import cucumberJson from 'wdio-cucumberjs-json-reporter';
 //import LoginPage from '../pageobjects/login.page';
 //import SecurePage from '../pageobjects/secure.page';
+//const NexportLoginPage = require('././test/pageobjects/nexportLogin.page');
 
 import NexportLoginPage from '../../test/pageobjects/nexportLogin.page';
 import NexportSearchPage from '../../test/pageobjects/search.page';
@@ -9,20 +10,50 @@ import NexportHomePage from '../../test/pageobjects/nexportHome.page';
 import Asserts from '../../test/common/Asserts';
 import testdata from '../../test/testdata/td.json';
 import logindata from '../../test/resources/loginproperties'
+import allureReporter from '@wdio/allure-reporter';
 
-//const NexportLoginPage = require('././test/pageobjects/nexportLogin.page');
-
-Given(/^I am on the (\w+) page$/, async (page) => {
+Given(/^User is on the login page$/, async () => {
+    const nexHome = await NexportHomePage.homeLink();
+    if(!(await nexHome.isDisplayed())){
     await NexportLoginPage.open();
     await NexportLoginPage.loginClick();
+}
 });
-
-When(/^I login with (\w+) and (.+)$/, async (username, password) => {
+When(/^User logins with given credentials$/, async () => {
+    const nexHome = await NexportHomePage.homeLink();
+    if(!(await nexHome.isDisplayed())){
     await NexportLoginPage.login(logindata.NEXUSERNAME, logindata.NEXPASSWORD);
+    }
 });
-
-Then(/^I should see a message saying (.*)$/, async (message) => {
+Then(/^User successfully logged into Application$/, async () => {
     const nexHome = await NexportHomePage.homeLink();       
     Asserts.equal(await nexHome.getText(), 'HOME');
 });
 
+When(/^User searches with \"(.*)\" in JobTitle$/, async(pageTitle)=>
+{
+    if(pageTitle == 'Admin'){
+        await NexportSearchPage.clickSearch();
+        await NexportSearchPage.setTitle("Admin");
+        await browser.pause(5000);       
+    }else if(pageTitle == 'Skill'){
+        await NexportSearchPage.clickSearch();
+        await NexportSearchPage.clearValues();  
+        await NexportSearchPage.setSkill("Automation Testing");
+        await browser.pause(5000); 
+    }
+}
+);
+Then(/^compare with the given \"(.*)\" value$/, async(expectedValue)=>
+{
+    if(expectedValue == 'AdminData'){
+        const adminsActual = await NexportSearchPage.getEmpList();
+        var expectedListOfEmployees = testdata.AdminData; 
+        Asserts.isArrayEqual(adminsActual, expectedListOfEmployees);
+    }else if(expectedValue == 'AutomationData'){
+        const qeListActual = await NexportSearchPage.getEmpList();
+        var expectedListOfEmployees = testdata.Qe_Automation_Emp_Data; 
+        Asserts.isArrayEqual(qeListActual, expectedListOfEmployees);
+    }
+}
+);

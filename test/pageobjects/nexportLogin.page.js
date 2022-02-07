@@ -31,7 +31,8 @@ class NexportLoginPage extends Page {
         const decryptedPassword = managepassword.decrypt(password);     
         await elementActions.setValue(await this.inputPassword, 'PASSWORD', decryptedPassword); 
         await elementActions.selectCheckbox(await this.rememberMe, 'RememberMe Checkbox'); 
-        await elementActions.click(await this.btnLoginSubmit, "Login Submit");          
+        await elementActions.click(await this.btnLoginSubmit, "Login Submit"); 
+        await browser.maximizeWindow();         
     }
     //loginWithBcrypt - This would compare the entered password with the encrypted password and verifies. it is highly not possible to decrypt this password 
     async loginWithBcrypt(username, password) {      
