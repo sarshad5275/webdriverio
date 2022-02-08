@@ -1,8 +1,5 @@
 import { Given, When, Then } from '@wdio/cucumber-framework';
 //import cucumberJson from 'wdio-cucumberjs-json-reporter';
-//import LoginPage from '../pageobjects/login.page';
-//import SecurePage from '../pageobjects/secure.page';
-//const NexportLoginPage = require('././test/pageobjects/nexportLogin.page');
 
 import NexportLoginPage from '../../test/pageobjects/nexportLogin.page';
 import NexportSearchPage from '../../test/pageobjects/search.page';

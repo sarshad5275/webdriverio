@@ -1,17 +1,18 @@
 //import 'chai/register-should';
 import BambooLoginPage from '../pageobjects/bambooLogin.page';
 import BambooHomePage from '../pageobjects/bambooHome.page';
+import logindata from '../resources/loginproperties'
 
 describe('My Nexport Login application', () => {
 
     it('should login with valid credentials1', async () => {
         await BambooLoginPage.open();     
         //get the data from json                                          
-        await BambooLoginPage.login(process.env.BAMBOO_USERNAME, process.env.BAMBOO_PASSWORD);
+        await BambooLoginPage.login(logindata.BAMBOO_USERNAME, logindata.BAMBOO_PASSWORD);
         const bambooHome = await BambooHomePage.homeLink();
         const homeTxt = await bambooHome.getText();
         console.log("nexHome  = " + homeTxt);
-        await cExpect(homeTxt).to.equal('HOME');
+        await cExpect(homeTxt).to.equal('Home');
     }); 
 
 });

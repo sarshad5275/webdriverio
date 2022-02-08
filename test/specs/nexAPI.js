@@ -8,6 +8,7 @@ import Reporter from '../common/Reporter';
 import Asserts from '../common/Asserts';
 import ProfileData from '../dataobjects/profileobj';
 import testData from '../testdata/td.json';
+import logindata from '../resources/loginproperties'
 
 let accessToken = "";
 
@@ -17,7 +18,7 @@ describe('Nexport API Test', () => {
     });
 
     it('API test1: get Employee Profile data', async () => { 
-        const profileResponse = await apiPage.nexProfileAPI(process.env.NEXUSERNAME,accessToken);
+        const profileResponse = await apiPage.nexProfileAPI(logindata.NEXUSERNAME,accessToken);
         const data = new ProfileData(profileResponse.body);
         Reporter.addStep("Profile Data = " + JSON.stringify(data));  
         Asserts.equal(profileResponse.status,200);   

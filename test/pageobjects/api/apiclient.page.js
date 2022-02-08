@@ -15,7 +15,6 @@ class APIClient {
             const token = await loginAPI.headers.accesstoken;
             Reporter.addStep("Access Token = " + await loginAPI.headers.accesstoken);  
             return token;
-
         } else {
             Asserts.fail("Failed to get the Login Token..");
         }
