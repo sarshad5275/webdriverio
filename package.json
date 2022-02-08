@@ -1,7 +1,7 @@
 {
   "name": "webdriverio-tests",
   "version": "1.0.0",
-  "description": "Automation Framework for WebdriverIO using MOCHA-JS",
+  "description": "Automation Framework for WebdriverIO",
   "main": "index.js",
   "scripts": {
     "bamboo": "wdio run wdio.mochaconf.js --spec ./test/specs/bamboo.js",
@@ -12,7 +12,7 @@
     "encrypt": "wdio run wdio.mochaconf.js --spec ./test/specs/encryptpassword.js",
     "wdio_cucumber": "wdio run wdio.cucumberconf.js",
     "cucumber": "wdio run ./wdio.cucumberconf.js ",
-    "tagtest": "wdio run ./wdio.cucumberconf.js --cucumberOpts.tagExpression",
+    "cucumbertag": "wdio run ./wdio.cucumberconf.js --cucumberOpts.tagExpression",
     "firsttest": "wdio run ./wdio.cucumberconf.js --cucumberOpts.tagExpression='@First'",
     "bambootest": "wdio run ./wdio.cucumberconf.js --cucumberOpts.tagExpression='@BambooFirst'",
     "clean": "rimraf allure-results && rimraf allure-report && rimraf test-screenshots && rimraf wdio-logs",
