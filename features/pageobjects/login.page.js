@@ -38,5 +38,4 @@ class LoginPage extends Page {
         return super.open('login');
     }
 }
-
 export default new LoginPage();

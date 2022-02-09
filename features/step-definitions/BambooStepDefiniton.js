@@ -3,7 +3,7 @@ import BambooLoginPage from '../../test/pageobjects/bambooLogin.page';
 import BambooHomePage from '../../test/pageobjects/bambooHome.page';
 import Asserts from '../../test/common/Asserts';
 import logindata from '../../test/resources/loginproperties'
-import allureReporter from '@wdio/allure-reporter';
+import allureReporter from '../../test/common/Reporter';
 import Reporter from '../../test/common/Reporter';
 let bambooHome = "";
 
