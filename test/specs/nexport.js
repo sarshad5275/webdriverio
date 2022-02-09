@@ -17,7 +17,7 @@ describe('My Nexport Login application', () => {
         Asserts.equal(await nexHome.getText(), 'HOME');
     }); 
     
-    it('Search with Admin in JobTitle Field', async () => {        
+    it('User should be able to search with Admin in JobTitle Field', async () => {        
         await NexportSearchPage.clickSearch();
         await NexportSearchPage.setTitle("Admin");
         await browser.pause(5000);       
@@ -26,7 +26,7 @@ describe('My Nexport Login application', () => {
         Asserts.isArrayEqual(adminsActual, expectedListOfEmployees);
     });
 
-    it('Search Skill Field', async () => { 
+    it('User should be able to search Skill Field using Automation Testing', async () => { 
         await NexportSearchPage.clickSearch();
         await NexportSearchPage.clearValues();  
         await NexportSearchPage.setSkill("Automation Testing");
