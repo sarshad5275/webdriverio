@@ -61,4 +61,7 @@ get the encryptedPassword written to the console.log
 and add encryptedPassword  to the .env file
 NOTE:'.env' file is not checked in for security reason. Please create a '.env' file at the root directory and add all Environment variables to that file. 
 
+Jenkins execution:
+Download jenkins war file from "https://www.jenkins.io/download/" and place it in your project folder
+
 

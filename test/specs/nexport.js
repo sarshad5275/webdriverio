@@ -33,6 +33,6 @@ describe('My Nexport Login application', () => {
         await browser.pause(5000);       
         const qeListActual = await NexportSearchPage.getEmpList();
         var expectedListOfEmployees = testdata.Qe_Automation_Emp_Data; 
-        Asserts.isArrayEqual(qeListActual, expectedListOfEmployees);
+        Asserts.isArrayEqual(qeListActual.sort(), expectedListOfEmployees.sort());
     });   
-});
+}); 

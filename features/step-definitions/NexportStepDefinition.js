@@ -50,7 +50,7 @@ Then(/^compare with the given \"(.*)\" value$/, async(expectedValue)=>
     }else if(expectedValue == 'AutomationData'){
         const qeListActual = await NexportSearchPage.getEmpList();
         var expectedListOfEmployees = testdata.Qe_Automation_Emp_Data; 
-        Asserts.isArrayEqual(qeListActual, expectedListOfEmployees);
+        Asserts.isArrayEqual(qeListActual.sort(), expectedListOfEmployees.sort());
     }
 }
 );
