@@ -5,7 +5,7 @@ import logindata from '../resources/loginproperties'
 
 describe('My Nexport Login application', () => {
 
-    it('User should login with valid credentials', async () => {
+    it('User should login to Bamboo HR with valid credentials', async () => {
         await BambooLoginPage.open();     
         //get the data from json                                          
         await BambooLoginPage.login(logindata.BAMBOO_USERNAME, logindata.BAMBOO_PASSWORD);
