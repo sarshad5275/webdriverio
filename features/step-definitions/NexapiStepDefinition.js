@@ -7,7 +7,7 @@ import Reporter from '../../test/common/Reporter';
 import Asserts from '../../test/common/Asserts';
 import ProfileData from '../../test/dataobjects/profileobj';
 import testData from '../../test/testdata/td.json';
-import logindata from '../../test/resources/loginproperties'
+import logindata from '../../test/resources/secretproperties'
 
 let accessToken = "";
 let profileResponse = "";

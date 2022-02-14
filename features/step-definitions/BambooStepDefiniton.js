@@ -2,7 +2,7 @@ import { Given, When, Then } from '@wdio/cucumber-framework';
 import BambooLoginPage from '../../test/pageobjects/bambooLogin.page';
 import BambooHomePage from '../../test/pageobjects/bambooHome.page';
 import Asserts from '../../test/common/Asserts';
-import logindata from '../../test/resources/loginproperties'
+import logindata from '../../test/resources/secretproperties'
 import allureReporter from '../../test/common/Reporter';
 import Reporter from '../../test/common/Reporter';
 let bambooHome = "";

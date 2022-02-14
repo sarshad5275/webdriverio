@@ -6,7 +6,7 @@ import NexportSearchPage from '../../test/pageobjects/search.page';
 import NexportHomePage from '../../test/pageobjects/nexportHome.page';
 import Asserts from '../../test/common/Asserts';
 import testdata from '../../test/testdata/td.json';
-import logindata from '../../test/resources/loginproperties'
+import logindata from '../../test/resources/secretproperties'
 import allureReporter from '@wdio/allure-reporter';
 //Adding comments for test
 let nexHome = "";

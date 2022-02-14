@@ -18,9 +18,9 @@ class Asserts {
 
     //expect([1, 2, 3]).to.have.members([2, 1, 3]);
     isArrayEqual(actual, expected) {  
-        Reporter.addStep("Actual data = " +  actual);    
-        Reporter.addStep("Expected data = " +  expected);   
-        expect(actual).to.have.members(expected);
+        Reporter.addStep("Actual data = " +  actual.sort());    
+        Reporter.addStep("Expected data = " +  expected.sort());   
+        expect(actual.sort()).to.have.members(expected.sort());
     }
 
     //deep equal checks 2 unordered objects data and gets the results if the values are same

@@ -5,7 +5,7 @@ import apiurls from '../../resources/baseurls';
 import apiendpoints from '../../resources/apiendpoints';
 //import credentials from '../../testdata/creds.json';
 import managepassword from '../../utility/managepassword';
-import loginproperties from '../../resources/loginproperties'
+import loginproperties from '../../resources/secretproperties'
 
 class APIClient {
     async nxToken() {

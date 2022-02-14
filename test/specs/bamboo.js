@@ -1,7 +1,7 @@
 //import 'chai/register-should';
 import BambooLoginPage from '../pageobjects/bambooLogin.page';
 import BambooHomePage from '../pageobjects/bambooHome.page';
-import logindata from '../resources/loginproperties'
+import logindata from '../resources/secretproperties'
 
 describe('My Nexport Login application', () => {
 

@@ -3,6 +3,14 @@
 "description": "Automation Framework for WebdriverIO using MOCHA-JS",
 "main": "index.js",
 
+create a secretproperties.js file inside 'resources' folder and add below properties. Please add your username and direct password (Do not encrypt the password) 
+module.exports = {
+NEXUSERNAME:'',
+NEXPASSWORD:'',
+BAMBOO_USERNAME:'',
+BAMBOO_PASSWORD: ''
+}
+
 Below configs are used for building the project:
 mochaJS as Framework
 chaiJs for Assertions
