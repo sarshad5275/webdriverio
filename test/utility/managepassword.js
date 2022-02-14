@@ -8,6 +8,7 @@ class ManagePasswords {
         var cryptr = new Cryptr("JSAutomation");
         var encstring = cryptr.encrypt(password);
         console.log("Encrypted Password = " + encstring);
+        return encstring;
     }
 
     decrypt(encryptedString) {

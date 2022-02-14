@@ -1,13 +1,14 @@
 import { Given, When, Then } from '@wdio/cucumber-framework';
 //import cucumberJson from 'wdio-cucumberjs-json-reporter';
 
-import NexportLoginPage from '../../test/pageobjects/nexportLogin.page';
-import NexportSearchPage from '../../test/pageobjects/search.page';
-import NexportHomePage from '../../test/pageobjects/nexportHome.page';
+import NexportLoginPage from '../../test/pageobjects/ui/nexportLogin.page';
+import NexportSearchPage from '../../test/pageobjects/ui/search.page';
+import NexportHomePage from '../../test/pageobjects/ui/nexportHome.page';
 import Asserts from '../../test/common/Asserts';
 import testdata from '../../test/testdata/td.json';
 import logindata from '../../test/resources/secretproperties'
 import allureReporter from '@wdio/allure-reporter';
+import managepassword from '../../test/utility/managepassword';
 //Adding comments for test
 let nexHome = "";
 
@@ -20,7 +21,8 @@ Given(/^User is on the Nexport login page$/, async () => {
 });
 When(/^User logins with given Nexport credentials$/, async () => {
     if(!(await nexHome.isDisplayed())){
-    await NexportLoginPage.login(logindata.NEXUSERNAME, logindata.NEXPASSWORD);
+    const encryptedpwd =   managepassword.encrypt(logindata.NEXPASSWORD); 
+    await NexportLoginPage.login(logindata.NEXUSERNAME, encryptedpwd);
     }
 });
 Then(/^User successfully logged into Nexport Application$/, async () => {   

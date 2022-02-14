@@ -1,8 +1,8 @@
 import Page from './page';
-import apiurls from '../resources/baseurls';
-import elementActions from '../common/elementActions';
-import managepassword from '../utility/managepassword';
-import Asserts from '../common/Asserts';
+import apiurls from '../../resources/baseurls';
+import elementActions from '../../common/elementActions';
+import managepassword from '../../utility/managepassword';
+import Asserts from '../../common/Asserts';
 
 
 /**

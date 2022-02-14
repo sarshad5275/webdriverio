@@ -1,18 +1,17 @@
-import NexportLoginPage from '../pageobjects/nexportLogin.page';
-import NexportSearchPage from '../pageobjects/search.page';
-import NexportHomePage from '../pageobjects/nexportHome.page';
+import NexportLoginPage from '../pageobjects/ui/nexportLogin.page';
+import NexportSearchPage from '../pageobjects/ui/search.page';
+import NexportHomePage from '../pageobjects/ui/nexportHome.page';
 import Asserts from '../common/Asserts';
 import testdata from '../testdata/td.json';
 import logindata from '../resources/secretproperties'
+import managepassword from '../utility/managepassword';
 
 describe('My Nexport Login application', () => {   
     it('Login to Nexport with valid credentials', async () => {       
         await NexportLoginPage.open();
         await NexportLoginPage.loginClick();
-        //getting the username and password from .env file
-        //process.env.NEXUSERNAME and process.env.NEXPASSWORD
-        await NexportLoginPage.login(logindata.NEXUSERNAME, logindata.NEXPASSWORD);
-       // await NexportLoginPage.loginWithBcrypt(process.env.NEXUSERNAME, process.env.NEXPASSWORD);
+        const encryptedpwd =   managepassword.encrypt(logindata.NEXPASSWORD); 
+        await NexportLoginPage.login(logindata.NEXUSERNAME, encryptedpwd);
         const nexHome = await NexportHomePage.homeLink();       
         Asserts.equal(await nexHome.getText(), 'HOME');
     }); 

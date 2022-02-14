@@ -1,6 +1,6 @@
 import Page from './page';
-import apiurls from '../resources/baseurls';
-import elementActions from '../common/elementActions';
+import apiurls from '../../resources/baseurls';
+import elementActions from '../../common/elementActions';
 
 
 /**

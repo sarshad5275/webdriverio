@@ -22,6 +22,7 @@ class APIClient {
 
     async nexLoginAPI() {
         console.log("NEXPORT Login API is called..");
+        const encryptedpwd =   managepassword.encrypt(loginproperties.NEXPASSWORD); 
         console.log("apiendpoints.nxLoginEndpoint = " + apiendpoints.nxLoginEndpoint);
         const request = supertest(apiurls.nxAPIBaseUrl);
         const loginResponse = await request
@@ -30,7 +31,7 @@ class APIClient {
                 //username: process.env.NEXUSERNAME,
                 //password: managepassword.decrypt(process.env.NEXPASSWORD)
                 username: loginproperties.NEXUSERNAME,
-                password: managepassword.decrypt(loginproperties.NEXPASSWORD)
+                password: managepassword.decrypt(encryptedpwd)
             })
             .set('version', apiurls.nxVersion_2);
         return loginResponse;

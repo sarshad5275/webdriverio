@@ -1,7 +1,7 @@
 import Page from './page';
-import apiurls from '../resources/baseurls';
-import elementActions from '../common/elementActions';
-import managepassword from '../utility/managepassword';
+import apiurls from '../../resources/baseurls';
+import elementActions from '../../common/elementActions';
+import managepassword from '../../utility/managepassword';
 
 /**
  * sub page containing specific selectors and methods for a specific page
