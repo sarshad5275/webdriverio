@@ -8,7 +8,7 @@ import Asserts from '../../test/common/Asserts';
 import testdata from '../../test/testdata/td.json';
 import logindata from '../../test/resources/loginproperties'
 import allureReporter from '@wdio/allure-reporter';
-
+//Adding comments for test
 let nexHome = "";
 
 Given(/^User is on the Nexport login page$/, async () => {
