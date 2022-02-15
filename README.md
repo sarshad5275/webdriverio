@@ -31,7 +31,7 @@ Open a terminal -> new terminal
 Run: 'npm install'  -- This will install all dependencies shown in package.json file
 
 Installations required to generate allure reports:
-1. Install latest JDK version from oracle website (https://www.oracle.com/java/technologies/downloads/#jdk17-windows)
+1. Install latest JDK version (zip file) from oracle website (https://www.oracle.com/java/technologies/downloads/#jdk17-windows)
 2. Install latest version of allure (zip file  from https://github.com/allure-framework/allure2/releases) and extract in the local folder.
 3. Added system environment variables as below
     a. allure (please provide allure installation path in the Value) 
