@@ -7,7 +7,7 @@
     "bamboo": "wdio run wdio.mochaconf.js --spec ./test/specs/bamboo.js",
     "nexport": "wdio run wdio.mochaconf.js --spec ./test/specs/nexport.js",
     "nexapi": "wdio run wdio.mochaconf.js --spec ./test/specs/nexAPI.js",
-    "examples": "wdio run wdio.mochaconf.js --spec ./test/specs/examples.js",
+    "examples": "wdio run wdio.mochaconf.js --spec ./test/specs/dbtest.js",
     "wdio_mocha": "wdio run wdio.mochaconf.js",
     "encrypt": "wdio run wdio.mochaconf.js --spec ./test/specs/encryptpassword.js",
     "wdio_cucumber": "wdio run wdio.cucumberconf.js",
@@ -17,7 +17,7 @@
     "clean": "rimraf allure-results && rimraf allure-report && rimraf test-screenshots && rimraf wdio-logs",
     "allure": "allure generate --clean allure-results && allure open",
     "open": "allure open",
-    "jenkins":"java -jar jenkins.war"
+    "jenkins": "java -jar jenkins.war"
   },
   "keywords": [],
   "author": "Nexient",
