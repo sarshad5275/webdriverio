@@ -19,7 +19,8 @@ class Asserts {
     //expect([1, 2, 3]).to.have.members([2, 1, 3]);
     isArrayEqual(actual, expected) {  
         Reporter.addStep("Actual data = " +  actual.sort());    
-        Reporter.addStep("Expected data = " +  expected.sort());   
+        Reporter.addStep("Expected data = " +  expected.sort()); 
+        Reporter.addStep("Actual data length :"+actual.length+". Expected data length :"+expected.length)  
         expect(actual.sort()).to.have.members(expected.sort());
     }
 

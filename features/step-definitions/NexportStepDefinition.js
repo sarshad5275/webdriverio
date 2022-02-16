@@ -47,7 +47,6 @@ Then(/^compare with the given \"(.*)\" value$/, async(expectedValue)=>{
     if(expectedValue == 'AdminData'){
         const adminsActual = await NexportSearchPage.getEmpList();
         var expectedListOfEmployees = testdata.AdminData; 
-        console.log("Admin data length:"+adminsActual.length)
         Asserts.isArrayEqual(adminsActual, expectedListOfEmployees);
     }else if(expectedValue == 'AutomationData'){
         const qeListActual = await NexportSearchPage.getEmpList();
