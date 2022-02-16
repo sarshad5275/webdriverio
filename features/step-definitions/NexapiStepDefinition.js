@@ -2,7 +2,10 @@ import { Given, When, Then } from '@wdio/cucumber-framework';
 
 import supertest from 'supertest';
 import HolidayList from '../../test/dataobjects/holidaylist';
-import apiPage from '../../test/pageobjects/api/apiclient.page';
+import nexcommon from '../../test/common/APICommon';
+import nexlogin from '../../test/pageobjects/api/nexlogin.page';
+import nexprofile from '../../test/pageobjects/api/nexprofile.page';
+import nexholiday from '../../test/pageobjects/api/nexholiday.page';
 import Reporter from '../../test/common/Reporter';
 import Asserts from '../../test/common/Asserts';
 import ProfileData from '../../test/dataobjects/profileobj';
@@ -15,8 +18,8 @@ let data = "";
 let holidaysRespose = "";
 
 Given(/^User has Nexport login credentials$/, async () => {
-    accessToken = await apiPage.nxToken();
-    profileResponse = await apiPage.nexProfileAPI(logindata.NEXUSERNAME,accessToken);
+    accessToken = await nexcommon.nxToken();
+    profileResponse = await nexprofile.nexProfileAPI(logindata.NEXUSERNAME,accessToken);
 });
 
 Then(/^User successfully connected Nexport Application$/, async () => {   
@@ -29,7 +32,7 @@ When(/^User provides required parameters for getting \"(.*)\" data$/, async (des
      data = new ProfileData(profileResponse.body);
      Reporter.addStep("Providing profile data in Profile object : "+ProfileData)
     }else if("holiday list"==desiredapi){
-        holidaysRespose = await apiPage.holidayAPI(accessToken);
+        holidaysRespose = await nexholiday.holidayAPI(accessToken);
         Reporter.addStep("Retrieving holiday Response object : "+holidaysRespose)
     }
 });
