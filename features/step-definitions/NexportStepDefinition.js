@@ -43,15 +43,16 @@ When(/^User searches with \"(.*)\" in JobTitle$/, async(pageTitle)=>
     }
 }
 );
-Then(/^compare with the given \"(.*)\" value$/, async(expectedValue)=>
-{
+Then(/^compare with the given \"(.*)\" value$/, async(expectedValue)=>{
     if(expectedValue == 'AdminData'){
         const adminsActual = await NexportSearchPage.getEmpList();
         var expectedListOfEmployees = testdata.AdminData; 
+        console.log("Admin data length:"+adminsActual.length)
         Asserts.isArrayEqual(adminsActual, expectedListOfEmployees);
     }else if(expectedValue == 'AutomationData'){
         const qeListActual = await NexportSearchPage.getEmpList();
         var expectedListOfEmployees = testdata.Qe_Automation_Emp_Data; 
+        console.log("Automation skill data length:"+qeListActual.length)
         Asserts.isArrayEqual(qeListActual.sort(), expectedListOfEmployees.sort());
     }
 }
