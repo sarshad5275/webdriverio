@@ -1,0 +1,8 @@
+{
+"createtable":
+"CREATE TABLE employees (name VARCHAR(255), email VARCHAR(255))",
+"insertdata":
+"INSERT INTO employees (name, email) VALUES ('Sasidhar Valluri', 'svalluri@nexient.com')",
+"retrievedata":
+"SELECT * FROM employees"
+}
