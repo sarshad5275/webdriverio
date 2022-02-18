@@ -12,7 +12,7 @@ class DBCommon{
         user: DBUserName,
         password: DBPassword
         });
-        await dbcon.connect((error)=> {
+        dbcon.connect((error)=> {
         if (error) {
         console.log("DB Connection failed. Please check the input parameters");
         Reporter.addStep("DB Connection failed. Please check the input parameters");
@@ -25,7 +25,7 @@ class DBCommon{
     }
 
      async dbQuery(dbconnect, SQLQuery){
-         await dbconnect.query(SQLQuery,(error,result)=>{
+           dbconnect.query(SQLQuery,(error,result)=>{
             if (error) {
             console.log("Please check the Query again");
             return false;
@@ -36,7 +36,7 @@ class DBCommon{
     }
 
     async dbClose(dbCon){
-        await dbCon.destroy;
+        dbCon.destroy;
         console.log("DB Connection Closed");
         Reporter.addStep("DB Connection Closed");
     }
