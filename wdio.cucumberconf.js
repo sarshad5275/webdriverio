@@ -147,12 +147,12 @@ exports.config = {
         addConsoleLogs: true,
         realtimeReporting: true
     },
+    ],
+    [ 'cucumberjs-json', {
+            jsonFolder: 'features/cucumber-reports/json',
+            language: 'en',
+            },
     ]
-        //[ 'cucumberjs-json', {
-        //        jsonFolder: '.tmp/new/',
-         //       language: 'en',
-         //   },
-        //],
 ],
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
