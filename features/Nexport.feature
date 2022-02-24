@@ -1,6 +1,6 @@
 Feature: NexPort Website Automation
 
-Background: Login to Application
+Background: Login to Nexport Application
     Given User is on the Nexport login page
     When User logins with given Nexport credentials
     Then User successfully logged into Nexport Application
