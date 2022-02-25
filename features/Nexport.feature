@@ -16,7 +16,7 @@ Examples:
     | Admin | AdminData |
 
 @Second
-Scenario: Search with Admin in JobTitle Field
+Scenario: Search with Automation skill in JobTitle Field
     Given User successfully logged into Nexport Application
     When User searches with "<TitleName>" in JobTitle
     Then compare with the given "<ExpectedValue>" value

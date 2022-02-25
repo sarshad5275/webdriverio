@@ -1,6 +1,6 @@
 Feature: Bamboo Website Automation
 
-@BambooFirst @TEST-TC-4
+@BambooFirst
 Scenario: Login to Bamboo Application
     Given User is on the Bamboo login page
     When User logins with given Bamboo credentials
