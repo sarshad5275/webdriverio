@@ -14,7 +14,7 @@
     "cucumber": "wdio run ./wdio.cucumberconf.js ",
     "cucumbertag": "wdio run ./wdio.cucumberconf.js --cucumberOpts.tagExpression",
     "apitest": "wdio run ./wdio.cucumberconf.js --cucumberOpts.tagExpression='@DBTest'",
-    "clean": "rimraf allure-results && rimraf allure-report && rimraf test-screenshots && rimraf wdio-logs && rimraf features/cucumber-reports",
+    "clean": "rimraf allure-results && rimraf allure-report && rimraf test-screenshots && rimraf wdio-logs && rimraf features/cucumber-reports/",
     "allure": "allure generate --clean allure-results && allure open",
     "open": "allure open",
     "jenkins": "java -jar jenkins.war"
