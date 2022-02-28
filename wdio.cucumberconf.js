@@ -151,6 +151,7 @@ exports.config = {
     [ 'cucumberjs-json', {
             jsonFolder: 'features/cucumber-reports/json',
             language: 'en',
+            disableHooks:true
             },
     ]
 ],
@@ -223,14 +224,14 @@ exports.config = {
      * @param {Array.<String>} specs        List of spec file paths that are to be run
      * @param {Object}         browser      instance of created browser/device session
      */
-     before: function () {
+     //before: function () {
 
         //require('babel-register')({
         //    blacklist: [
         //        'regenerator'
         //    ]
        // });
-     },
+     //},
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {String} commandName hook command name
@@ -287,9 +288,9 @@ exports.config = {
      * @param {number}                 result.duration  duration of scenario in milliseconds
      * @param {Object}                 context          Cucumber World object
      */
-     afterScenario: function (world, result, context) {
+     //afterScenario: function (world, result, context) {
      //browser.closeWindow();
-    },
+    //},
     /**
      *
      * Runs after a Cucumber Feature.
