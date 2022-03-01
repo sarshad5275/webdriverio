@@ -3,3 +3,4 @@ _results_
 allure-report/*
 allure-results/*
 secretproperties.js
+.root/*
