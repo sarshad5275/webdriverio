@@ -72,4 +72,16 @@ NOTE:'.env' file is not checked in for security reason. Please create a '.env' f
 Jenkins execution:
 Download jenkins war file from "https://www.jenkins.io/download/" and place it in your project folder
 
+We have to diableHooks in cucumber configuration file to integrate with AIO tests. Currently AIO is not supporting the hooks in the json report so until and unlesss we disable the hooks, AIO cannot read our json files.
+
+disableHooks:true
+
+Eg:
+[ 'cucumberjs-json', {
+            jsonFolder: 'features/cucumber-reports/json',
+            language: 'en',
+            disableHooks:true
+            },
+]
+
 
