@@ -5,7 +5,7 @@ report.generate({
 	reportPath: 'features/cucumber-reports/',
     openReportInBrowser:true,
     staticFilePath:true,
-    saveCollectedJSON:true,
+    //saveCollectedJSON:true,
     pageTitle:'CucumberReport',
     reportName:'CucumberReport',
     pageFooter:'Developed by Nexient LLC',
@@ -15,12 +15,12 @@ report.generate({
 	metadata:{
         browser: {
             name: 'chrome',
-            version: 'Latest'
+            version: '1.0.0'
         },
-        device: 'My Laptop',
+        device: 'Web & API Automation',
         platform: {
             name: 'Windows',
-            version: 'Latest'
+            version: '1.0.0'
         }
     },
     customData: {
